@@ -1,7 +1,6 @@
 import os
-from datetime import timedelta
-
 import environ
+from datetime import timedelta
 from pathlib import Path
 
 root = environ.Path(__file__) - 2
@@ -97,7 +96,7 @@ REST_FRAMEWORK = {
     ),
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.simlejwt.authentication.JWTAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ],
 
