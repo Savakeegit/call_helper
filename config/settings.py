@@ -59,7 +59,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -92,8 +91,6 @@ DATABASES = {
         'name': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-
 
 ####################################
 # DJANGO REST FRAMEWORK

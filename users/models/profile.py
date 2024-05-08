@@ -22,12 +22,9 @@ class Profile(models.Model):
         return f'{self.user} ({self.pk})'
 
     @receiver(post_save, sender=User)
-    def post_save_user(sender, instance, created, **kwargs):
+    def post_save_user(self, instance, created, **kwargs):
         if created:
             if not hasattr(instance, 'telegram_id',):
                 Profile.objects.create(
                     user=instance,
                 )
-
-
-
