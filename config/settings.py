@@ -37,6 +37,7 @@ INSTALLED_APPS += [
     'common',
     'users',
     'breaks',
+    'organisations',
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -55,6 +56,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+]
+
+MIDDLEWARE += [
+    'crum.CurrentRequestUserMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -114,6 +119,7 @@ REST_FRAMEWORK = {
     ],
 
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_PAGINATION_CLASS': 'common.pagination.BasePagination',
 }
 
 AUTH_PASSWORD_VALIDATORS = [

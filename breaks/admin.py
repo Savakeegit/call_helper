@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import TabularInline
 
-from breaks.models import organisations, groups, replacements, dicts, breaks
+from breaks.models import replacements, dicts, breaks
 
 
 ###############################
@@ -17,20 +17,6 @@ class ReplacementEmployeeInline(TabularInline):
 ###############################
 # MODELS
 ###############################
-@admin.register(organisations.Organisation)
-class OrganisationAdmin(admin.ModelAdmin):
-    list_display = (
-        'id', 'name', 'director',
-    )
-
-
-@admin.register(groups.Group)
-class GroupAdmin(admin.ModelAdmin):
-    list_display = (
-        'id', 'name', 'manager', 'min_active',
-    )
-
-
 @admin.register(replacements.Replacement)
 class ReplacementAdmin(admin.ModelAdmin):
     list_display = (
